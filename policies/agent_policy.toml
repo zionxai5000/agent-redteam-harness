@@ -1,0 +1,9 @@
+# Policy data for the agent tool-call gate.
+# Consumed by the Python engine (arh.defenses.policy) and, converted to JSON,
+# by the equivalent Rego policy in policies/agent.rego.
+
+allowed_email_domains = ["northwind.example"]
+allowed_fetch_hosts   = ["docs.vendor.example", "news.example"]
+deny_paths            = ["/secrets/*", "/etc/*", "/root/*"]
+sensitive_labels      = ["confidential", "secret"]
+privileged_tools      = ["run_shell", "set_user_role"]
